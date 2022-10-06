@@ -174,11 +174,11 @@ class Instructions:
 
     class Jump(Instruction):
         def __init__(self, reg: RegisterParameter):
-            super().__init__("JMP", 0b10000, [reg, Value8Parameter(0), EmptyByteParameter()], 4)
+            super().__init__("JMP", 0b10000, [reg, Value8Parameter(1), EmptyByteParameter()], 4)
 
     class JumpIf(Instruction):
         def __init__(self, reg: RegisterParameter):
-            super().__init__("JMP", 0b10000, [reg, Value8Parameter(1), EmptyByteParameter()], 4)
+            super().__init__("JMP", 0b10000, [reg, Value8Parameter(0), EmptyByteParameter()], 4)
 
     class GpuDraw(Instruction):
         def __init__(self, reg_a: RegisterParameter, reg_b: RegisterParameter):

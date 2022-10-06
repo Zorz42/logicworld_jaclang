@@ -142,7 +142,7 @@ class VirtualMachine:
             elif curr_opcode == 0b10000:  # jmp
                 reg = self.memory[self.program_counter + 1]
                 cond = self.memory[self.program_counter + 2]
-                if cond == 0 or self.registers[0] == 1:
+                if cond == 1 or self.registers[0] == 1:
                     self.program_counter = self.registers[reg]
                 else:
                     self.program_counter += 4
